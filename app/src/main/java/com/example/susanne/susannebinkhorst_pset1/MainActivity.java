@@ -8,6 +8,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     ImageView Eyes, Nose, Ears, Shoes, Mustache, Arms, Glasses, Mouth, Eyebrows, Hat;
+
+    // Create the app and the global variables for the images.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Mustache = findViewById(R.id.Mustache);
     }
 
+    // Save whether the images are visible or invisible in the current state.
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("glasses_im", Glasses.getVisibility());
     }
 
+    // Restore the invisible and visible images to current state.
     @Override
     public void onRestoreInstanceState(Bundle inState) {
         super.onRestoreInstanceState(inState);
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // Checks which checkbox is checked and make the belonging image visible or invisible.
     public void checkboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
